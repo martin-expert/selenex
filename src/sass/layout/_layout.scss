@@ -1,0 +1,35 @@
+.container {
+  max-width: $contentWidth;
+
+  margin: 0 auto;
+  padding: 0 $contentPadding;
+}
+
+h1 {
+  margin-bottom: var(--h1-mrg-b, rem(8));
+
+  font-size: var(--h1-fn-size, rem(38));
+}
+
+p {
+  font-size: var(--p-fn-size, rem(20));
+  color: $cl-text-second;
+}
+
+//css grids
+//
+//.container {
+//  background-size: calc((100% / 12));
+//
+//  background-image: linear-gradient(to right,
+//          rgba(#FF3E23, .6) 0%,
+//          rgba(#FF3E23, .6) 40%,
+//          rgba(#FF3E23, 0) 40%,
+//          rgba(255, 17, 0, 0) 60%,
+//          rgba(255, 17, 0, 0) 60%,
+//          rgba(#FF3E23, .6) 60%,
+//          rgba(#FF3E23, .6) 100%);
+//
+//  //linear-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px)
+//
+//}

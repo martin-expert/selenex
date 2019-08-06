@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  line-height: normal;
+  letter-spacing: normal;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  scroll-behavior: smooth;
+
+  @media (max-width: 1366px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 992px) {
+    --section-spacer: #{rem(66)} !important;
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    --content-padding: #{rem(16)} !important;
+
+    --section-spacer: #{rem(52)} !important;
+    --section-spacer-second: #{rem(28)} !important;
+
+    --h1-fn-size: #{rem(30)};
+    --p-fn-size: #{rem(18)};
+
+    font-size: 14px;
+  }
+
+  //@media (min-width: 992px) and (max-width: 1366px) {
+  //  font-size: 14px;
+  //}
+}
+
+body {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  padding: $headerHeight 0 0;
+
+  color: $cl-text;
+
+  background-color: $bg-color;
+}
+
+a {
+  color: black;
+
+  &:hover {
+    color: $cl-green;
+    text-decoration: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+a, button, select {
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+
+  outline: none;
+}
+
+mark {
+  color: inherit;
+  background-color: transparent;
+}

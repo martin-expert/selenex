@@ -1,0 +1,105 @@
+.testimonials {
+  padding: var(--section-spacer) 0;
+
+  overflow: hidden;
+
+  &__list {
+    @extend .container;
+
+    text-align: center;
+  }
+
+  &__items {
+    display: inline-grid;
+    grid-gap: rem(6) $contentPadding;
+    grid-auto-rows: max-content;
+    grid-template: rem(24) minmax(rem(24), rem(64)) #{(rem(32))} / 1fr var(--testimonials-column, minmax(rem(200), rem(260)));
+
+    padding: rem(20);
+
+    text-align: left;
+
+    > * {
+      align-self: self-start;
+    }
+  }
+
+  &__avatar {
+    grid-column: 1;
+    grid-row: 1/4;
+
+    width: rem(150);
+    height: rem(150);
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: rem(20);
+  }
+
+  &__rating {
+    font-size: rem(18);
+    color: $cl-yellow;
+
+    letter-spacing: rem(3);
+  }
+
+  &__description {
+    position: relative;
+
+    grid-column: 2;
+
+    height: rem(60);
+
+    font-size: rem(13.3);
+    line-height: 1.3;
+
+    overflow: hidden;
+
+    //&:after {
+    //  position: absolute;
+    //  right: 0;
+    //  bottom: rem(-12);
+    //  left: 0;
+    //
+    //  height: rem(30);
+    //
+    //  content: "";
+    //
+    //  background: $grad-text-gray;
+    //}
+  }
+
+  &__author {
+    display: inherit;
+
+    grid-column: 2;
+
+    font-weight: bold;
+
+    span {
+      margin-top: rem(1);
+
+      font-size: rem(10);
+      color: $cl-green-dark;
+    }
+  }
+
+  @include max-wide(tablet) {
+    &__items {
+      --testimonials-column: #{minmax(rem(200), rem(350))};
+    }
+  }
+
+  @include max-wide(phones) {
+    &__items {
+      padding: rem(20) 0;
+    }
+  }
+
+  @include max-wide(phonesSm) {
+    &__avatar {
+      width: rem(120);
+    }
+  }
+}

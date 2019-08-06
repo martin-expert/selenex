@@ -1,0 +1,163 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &::before {
+    content: "";
+    display: table;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin text-dot {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//adaptive mixins
+
+@mixin min-wide($size) {
+  @if (map-has-key($wideScreens, $size)) {
+    @media (min-width: map-get($wideScreens, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "$size doesn't exist in $wideScreens.";
+  }
+}
+
+@mixin max-wide($size) {
+  @if (map-has-key($wideScreens, $size)) {
+    @media (max-width: map-get($wideScreens, $size) - 1) {
+      @content;
+    }
+  } @else {
+    @warn "$size doesn't exist in $wideScreens.";
+  }
+}
+
+@mixin widescreen() {
+  @media screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin notebook() {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Remaining width block
+@mixin remaining($selectorName, $orientation, $size, $indent) {
+  &#{$selectorName} {
+    #{$orientation}: calc(#{$size} - #{$indent}) !important;
+  }
+}
+
+//Unification mixin for helpers width
+@mixin unify-sizer-modifier($selectorName, $property, $size) {
+  &--#{$selectorName} {
+    #{$property}: $size !important;
+  }
+}
+
+@mixin artificial-thickness($thick, $color) {
+  $min-think: -$thick;
+  text-shadow: $min-think 0 $color, 0 $thick $color, $thick 0 $color, 0 $min-think $color;
+}
+
+@mixin pseudo-icon($icon-name, $size) {
+  content: unicode($icon-name);
+  font: {
+    @if type-of($size) == 'number' and unitless($size) {
+      size: rem($size)
+    } @else {
+      size: $size;
+    }
+    family: $icon-font-family;
+  }
+  line-height: 1;
+}
+
+@mixin no-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

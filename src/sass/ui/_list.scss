@@ -1,0 +1,17 @@
+.list {
+
+  li::before {
+    display: inline-block;
+    vertical-align: bottom;
+
+    width: .75em;
+    margin-left: -.75em;
+
+    content: "\2022";
+    color: var(--list-bulet-color, $cl-green-dark);
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.75rem;
+  }
+
+}

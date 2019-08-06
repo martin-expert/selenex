@@ -1,0 +1,163 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  min-height: $headerHeight;
+
+  padding: $contentPadding 0;
+
+  font-size: rem(16);
+
+  background-color: $cl-white;
+  box-shadow: 0 rem(2) rem(16.6) rem(1.4) rgba(2, 3, 2, 0.1);
+
+  transition: height .2s ease-in-out;
+
+  &__content {
+    @extend .container;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: rem(60);
+
+    font-size: rem(20);
+    font-weight: bold;
+
+    &:not(&--is-detail) {
+      --header-arrow: #{0};
+
+      & + .header__detail {
+        display: none;
+      }
+    }
+  }
+
+  &__detail {
+    display: grid;
+    grid-gap: rem(10);
+
+    padding: rem(30) 0 rem(30) rem(32);
+
+    border-top: rem(1) solid $cl-silver;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:not(:first-child):not(:last-child):not(:nth-child(2)) {
+        padding-top: rem(10);
+
+        border-top: rem(1) solid $cl-silver;
+      }
+    }
+  }
+
+  &__left {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-gap: rem(10);
+    align-items: center;
+
+    color: $cl-green;
+
+    cursor: pointer;
+
+    .sli-cart {
+      font-size: rem(26);
+    }
+
+    .sli-right-down {
+      font-size: rem(12);
+
+      transform: rotate(var(--header-arrow, 180deg));
+
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__product {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr;
+    grid-gap: rem(4) rem(25);
+    align-items: center;
+
+    &-prew {
+      position: relative;
+
+      grid-row: 1/4;
+
+      min-width: rem(80);
+      height: rem(80);
+
+      padding: rem(10);
+
+      border: rem(2) solid $cl-green;
+      border-radius: rem(10);
+
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(22);
+        height: rem(22);
+
+        font-size: rem(15);
+        font-weight: bold;
+        color: $cl-white;
+        line-height: 0;
+        content: attr(data-choose-plan);
+
+        border-radius: 50%;
+        background-color: $cl-green;
+
+        transform: translate(49%, -49%);
+      }
+
+      img {
+        display: block;
+
+        width: auto;
+        height: 100%;
+
+        margin: auto;
+
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &-capt {
+      font-size: rem(14);
+      font-weight: bold;
+    }
+
+    &-desc {
+      font-size: rem(12);
+      font-weight: 400;
+    }
+
+    &-sale {
+      color: $cl-green;
+    }
+  }
+
+  &__total {
+    font-size: rem(18);
+    font-weight: bold;
+  }
+}

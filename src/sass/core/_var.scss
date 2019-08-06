@@ -1,0 +1,106 @@
+/*
+`* In this file, all the variables associated with the project are stored.
+//*/
+
+//*  Content variables
+
+//
+$wideScreens: (
+    phonesSm: 340px,
+    phones: 480px,
+    tablet: 760px,
+    laptop: 992px,
+    desktopSm: 1020px,
+    desktopMd: 1170px,
+    desktop: 1280px,
+    notebook: 1400px,
+    notebookLg: 1600px,
+    hd: 1800px,
+    retina: 2100px,
+    retina4k: 3656px,
+    retina5k: 5100px,
+    retina8k: 7600px
+);
+
+//* Main sizes
+$contentWidth: var(--content-width);
+$contentPadding: var(--content-padding);
+$contentGutter: rem(26);
+
+$elemRadius: rem(10);
+
+$headerHeight: rem(92);
+
+//* Root
+:root {
+  //* root sizes
+  --content-width: #{rem(1248)};
+  --content-padding: #{rem(20)};
+
+  --section-spacer: #{rem(80)};
+  --section-spacer-second: #{rem(40)};
+
+  //* root color
+}
+
+$cl-green-light: #dbebb0;
+$cl-green-light-middle: #afd441;
+$cl-green: #a6ce39;
+$cl-green-middle: #86ad1a;
+$cl-green-dark: #52a02f;
+
+$cl-yellow: #f9d801;
+
+$cl-gray-light: #F6F7F8;
+$cl-gray: #585858;
+$cl-gray-dark: #34373a;
+$cl-gray-dark-middle: #333333;
+
+$cl-black: #000000;
+$cl-text: #0e0e0e;
+$cl-text-second: #5C6166;
+$cl-white: #ffffff;
+
+$cl-silver: #eeeeee;
+
+$bg-color: $cl-gray-light;
+
+$grad-text-gray: linear-gradient(to bottom, rgba(246, 247, 248, 0) 0%, rgba(246, 247, 248, 0) 0%, rgba(246, 247, 248, 1) 75%, rgba(246, 247, 248, 1) 100%);
+
+// * shadows
+$shadow-card: 0 rem(4) rem(8) rgba(0, 0, 0, 0.08);
+$shadow-video: 0 0 rem(10) rem(0.1) rgba(0, 0, 0, 0.08);
+$shadow-card-hover: 0 0 rem(10) rem(0.2) rgba(0, 0, 0, 0.3);
+$shadow-card-active: 0 0 0 rem(6) $cl-green-light-middle; //inset 0 0 0 rem(3) $cl-green-middle,
+$shadow-tooltip: 0 rem(2) rem(20) 0 rgba(0, 0, 0, 0.20), 0 rem(-2) rem(20) 0 rgba(0, 0, 0, 0.10);
+;
+
+// * fonts
+$font-path: "../fonts" !default;
+$font-mp-path: $font-path + "/metapro/" !default;
+
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Lato';
+$font-family-tertiary: 'Libre Baskerville', serif;
+
+//* Icons
+$icon-font-family: "selenex-icons" !default;
+$icon-font-path: $font-path !default;
+//
+
+$sli-locked: "\e90e";
+$sli-question: "\e90f";
+$sli-cards: "\e90a";
+$sli-paypal-path1: "\e90b";
+$sli-paypal-path2: "\e90c";
+$sli-delivery: "\e90d";
+$sli-cart: "\e905";
+$sli-right-arrow: "\e906";
+$sli-right-down: "\e907";
+$sli-right-left: "\e908";
+$sli-right-top: "\e909";
+$sli-check: "\e900";
+$sli-play: "\e901";
+$sli-security: "\e902";
+$sli-speaker-right: "\e903";
+$sli-speaker: "\e904";

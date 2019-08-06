@@ -1,0 +1,36 @@
+/*
+ *! Welcome to this project.
+ * This file contains your main styles and all the imports of external styles
+ * Developers(html/css coder):
+
+ //   Pashchuk Ilya (illyadeveloper@gmail.com; skype: x-developmaster-x; telegram: @justtwic)
+*/
+
+//@import "libs/bootstrap";
+//*------------------------------------------- core*
+@import "core/functions";
+@import "core/mixins";
+@import 'core/var';
+@import "core/base";
+@import "core/fonts";
+@import "core/icons";
+//!*------------------------------------------- layout*
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
+//*------------------------------------------- ui*
+@import "ui/list";
+@import "ui/form";
+@import "ui/button";
+@import "ui/input";
+@import "ui/select";
+@import "ui/radio";
+@import "ui/tooltip";
+//*------------------------------------------- libs*
+@import "components/promo-offer";
+@import "components/testimonials";
+@import "components/product-plan";
+@import "components/coupon";
+@import "components/set-order";
+@import "components/faq";
+

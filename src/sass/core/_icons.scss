@@ -1,0 +1,122 @@
+@font-face {
+  font-family: '#{$icon-font-family}';
+  src: url('#{$icon-font-path}/#{$icon-font-family}.eot?1zrnr');
+  src: url('#{$icon-font-path}/#{$icon-font-family}.eot?1zrnr#iefix') format('embedded-opentype'),
+  url('#{$icon-font-path}/#{$icon-font-family}.ttf?1zrnr') format('truetype'),
+  url('#{$icon-font-path}/#{$icon-font-family}.woff?1zrnr') format('woff'),
+  url('#{$icon-font-path}/#{$icon-font-family}.svg?1zrnr##{$icon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sli-"], [class*=" sli-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sli-locked {
+  &:before {
+    content: $sli-locked;
+  }
+}
+
+.sli-question {
+  &:before {
+    content: $sli-question;
+  }
+}
+
+.sli-cards {
+  &:before {
+    content: $sli-cards;
+  }
+}
+
+.sli-paypal {
+  &:before {
+    content: $sli-paypal-path1;
+    color: rgb(3, 169, 244);
+  }
+
+  &:after {
+    content: $sli-paypal-path2;
+    margin-left: -1em;
+    color: rgb(40, 53, 147);
+  }
+}
+
+.sli-delivery {
+  &:before {
+    content: $sli-delivery;
+  }
+}
+
+.sli-cart {
+  &:before {
+    content: $sli-cart;
+  }
+}
+
+.sli-right-arrow {
+  &:before {
+    content: $sli-right-arrow;
+  }
+}
+
+.sli-right-down {
+  &:before {
+    content: $sli-right-down;
+  }
+}
+
+.sli-right-left {
+  &:before {
+    content: $sli-right-left;
+  }
+}
+
+.sli-right-top {
+  &:before {
+    content: $sli-right-top;
+  }
+}
+
+.sli-check {
+  &:before {
+    content: $sli-check;
+  }
+}
+
+.sli-play {
+  &:before {
+    content: $sli-play;
+  }
+}
+
+.sli-security {
+  &:before {
+    content: $sli-security;
+  }
+}
+
+.sli-speaker-right {
+  &:before {
+    content: $sli-speaker-right;
+  }
+}
+
+.sli-speaker {
+  &:before {
+    content: $sli-speaker;
+  }
+}

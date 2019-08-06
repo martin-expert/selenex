@@ -1,0 +1,224 @@
+.product-plan {
+  padding: var(--section-spacer) 0;
+
+  text-align: center;
+
+  user-select: none;
+  cursor: pointer;
+
+  &__content {
+    @extend .container;
+
+  }
+
+  &__head {
+
+  }
+
+  &__list {
+    display: grid;
+    //grid-auto-flow: column;
+    //grid-template-columns: repeat(auto-fill, rem(340));
+    place-content: center;
+
+    padding: calc(var(--section-spacer) + #{rem(20)}) 0 var(--section-spacer-second);
+
+    grid-gap: var(--section-spacer-second);
+
+    &:hover {
+      //--product-plan-card-trans: 0;
+    }
+  }
+
+  &__card {
+    position: relative;
+
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+    place-content: center;
+
+    padding: rem(30) 0;
+    border-radius: rem(16);
+
+    background-color: $cl-white;
+    box-shadow: var(--product-plan-card-active, $shadow-card);
+
+    transition: transform .3s ease-in-out;
+
+    &:first-child {
+      z-index: 1;
+      transform: translate3d(var(--product-plan-card-trans, 2%, 0, 0)) scale(var(--product-plan-card-scale, 1));
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+      transform: translate3d(var(--product-plan-card-trans, 0, 0, 0)) scale(var(--product-plan-card-scale, 1));
+    }
+
+    &:last-child {
+      z-index: 1;
+      transform: translate3d(var(--product-plan-card-trans, -2%, 0, 0)) scale(var(--product-plan-card-scale, 1));
+    }
+
+    &--is-active {
+      --product-plan-card-active: #{$shadow-card-active};
+      //--product-plan-card-scale: 1.06;
+    }
+
+    &:hover {
+      //background-color: $cl-silverff1;
+    }
+  }
+
+  &__sticker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    display: inline-grid;
+    grid-template: #{rem(140)} / #{rem(140)};
+    align-items: center;
+    justify-content: center;
+
+    filter: drop-shadow(rem(-1) rem(5) rem(3) rgba(50, 50, 0, 0.2));
+    overflow: hidden;
+
+    span {
+      font-size: rem(14);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $cl-white;
+      line-height: rem(32);
+
+      transform: rotate(45deg) translate(0px, -86%);
+    }
+
+    &:before {
+      position: absolute;
+      left: rem(14);
+      z-index: -1;
+
+      width: 100%;
+      height: 100%;
+
+      content: "";
+
+      clip-path: polygon(0 0, 36% 0, 100% 64%, 100% 100%);
+      background-color: var(--product-plan-card-sticker, $cl-green-dark);
+    }
+
+    &--yellow {
+      --product-plan-card-sticker: #{$cl-yellow};
+    }
+
+    &--gray {
+      --product-plan-card-sticker: #{ $cl-gray}
+    }
+  }
+
+  &__caption {
+    min-height: rem(64);
+    margin: rem(30) 0 rem(20);
+
+    font-size: rem(30);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.23;
+  }
+
+  &__img {
+    max-width: rem(200);
+    max-height: rem(120);
+
+    margin: rem(40) 0;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__features {
+    width: 100%;
+
+    padding: 0;
+
+    font-size: rem(18);
+    line-height: 1.4;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: rem(60);
+
+      padding: rem(10) rem(30);
+
+      border: rem(1) solid $cl-silver;
+      border-left: none;
+      border-right: none;
+
+      &:not(:first-child) {
+        margin-top: rem(-1);
+      }
+
+      &:not(:nth-child(odd)) {
+        //background-color: #939397;
+      }
+    }
+  }
+
+  &__price {
+    display: inline-grid;
+    grid-gap: rem(5);
+
+    min-height: rem(146.75);
+
+    padding: rem(40) 0;
+
+    font-size: rem(40);
+    line-height: 1;
+    font-weight: bold;
+
+    &:before {
+      content: attr(data-old-price);
+
+      font-size: rem(20);
+      font-weight: 300;
+      text-decoration: line-through;
+      opacity: 0.8;
+    }
+
+    &:after {
+      content: '\a0' attr(data-price-adit) '\a0';
+
+      font-size: rem(18);
+      font-weight: bold;
+      line-height: 1.03;
+      color: $cl-green-middle;
+    }
+  }
+
+  @include min-wide(tablet) {
+    &__list {
+      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fit, minmax(rem(200), rem(340)));
+    }
+
+    .product-plan__card--is-active {
+      --product-plan-card-active: #{$shadow-card-active};
+      --product-plan-card-scale: 1.06;
+    }
+  }
+
+  @include max-wide(tablet) {
+    --product-plan-card-trans: 0, 0, 0;
+  }
+
+  @include max-wide(phones) {
+    &__card {
+      max-width: rem(320);
+    }
+  }
+}

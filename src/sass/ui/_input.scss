@@ -1,0 +1,60 @@
+.input {
+  position: relative;
+
+  &__field {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0 $contentPadding;
+
+    width: 100%;
+    min-height: rem(50);
+
+    font-size: rem(16);
+    font-weight: 500;
+    color: $cl-text;
+
+    border: rem(1) solid var(--input-border-color, $cl-silver);
+    border-radius: $elemRadius;
+    background-color: $cl-white;
+
+    transition: all .3s ease-in-out;
+    outline: none;
+
+    @include placeholder {
+      font-weight: 300;
+      color: $cl-text-second;
+    }
+
+    &:focus, &:hover {
+      --input-border-color: #{$cl-green};
+
+      box-shadow: inset 0 0 0 rem(1) $cl-green;
+    }
+
+    &:focus {
+
+    }
+
+    &:active {
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: 50%;
+    right: rem(5);
+
+    font-size: rem(15);
+    color: rgba(#5C6166, .4);
+
+    border: none;
+    background: transparent;
+
+    transform: translate(-50%, -50%);
+
+    &:hover {
+      color: $cl-green;
+    }
+  }
+}

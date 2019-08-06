@@ -1,0 +1,113 @@
+.faq {
+  padding: var(--section-spacer) 0;
+
+  background-color: rgba(0, 0, 0, .08);
+
+  &__head {
+    text-align: center;
+  }
+
+  &__content {
+    @extend .container;
+  }
+
+  &__list {
+    margin-top: rem(60);
+
+    border-radius: $elemRadius;
+    border: rem(1) solid $cl-silver;
+
+    overflow: hidden;
+    box-shadow: $shadow-card;
+  }
+
+  &__item {
+    background-color: $cl-white;
+
+    &:not(&--is-show) {
+      --faq-arrow-rotate: 0;
+      --faq-list-height: 0 !important;
+    }
+
+    &:not(:first-child) {
+      border-top: rem(1) solid $cl-silver;
+    }
+
+    &.faq__item--is-show .faq__item-content {
+      transition: max-height 1s ease-in-out;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: rem(16) rem(30);
+
+      font-size: var(--faq-title-fn, rem(28));
+      font-weight: 600;
+
+      background-color: #f3f3f3;
+
+      cursor: pointer;
+
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: $cl-green;
+      }
+
+      &:after {
+        margin-left: rem(30);
+
+        @include pseudo-icon($sli-right-down, 16);
+        font-weight: bold;
+
+        transform: rotate(var(--faq-arrow-rotate, 180deg));
+        transition: inherit;
+      }
+    }
+
+    &-content {
+      --list-bulet-color: #{$cl-green};
+
+      max-height: var(--faq-list-height, rem(700));
+
+      padding: 0 rem(30);
+
+      border-top: rem(1) solid $cl-silver;
+      background-color: $cl-white;
+
+      transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+      overflow: hidden;
+
+      & > * {
+        font-size: rem(17);
+        line-height: 1.5;
+        color: $cl-text-second;
+
+        &:first-child {
+          margin-top: rem(30);
+        }
+
+        &:last-child {
+          margin-bottom: rem(30);
+        }
+      }
+
+      ul {
+        @extend .list;
+
+        padding: rem(12) 0 0 rem(36);
+      }
+
+      img {
+        max-width: rem(470);
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    --faq-title-fn: #{rem(18)};
+  }
+}
