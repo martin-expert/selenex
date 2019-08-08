@@ -236,212 +236,39 @@
     </article>
 </section>
 
-    <section id="setOrder" class="set-order">
-    <div class="set-order__content">
-        <header class="set-order__head">
-            <h1>Complete Your Order</h1>
-            <p>Pay Securely with Credit Card or Paypal</p>
+    <!-- include('includes/components/_set-order.html') -->
+    
 
-            <div class="set-order__images">
-                <img class="set-order__img-gar" src="images/garn2.png" alt="">
-
-                <img class="set-order__img" src="images/payments2.png" alt="">
-            </div>
-        </header>
-
-        <form class="set-order__forms" action="post">
-            <div class="form-group">
-                <label class="form-group__capt">Customer Information</label>
-
-                <div class="input form-group__full-item">
-                    <input class="input__field" type="text" placeholder="Email">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-group__capt">Shipping Address</label>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder="First Name">
-                </div>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder="Last Name">
-                </div>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder="address">
-                </div>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder="Apt/Suite">
-                </div>
-
-                <div class="input form-group__full-item">
-                    <input class="input__field" type="text" placeholder="City">
-                </div>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder="Zipcode">
-                </div>
-
-                <div class="input">
-                    <input class="input__field" type="text" placeholder=Phone>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-group__capt">Billing Address</label>
-
-                <div class="form-group__set">
-                    <div class="radio">
-                        <input class="radio__field" type="radio" name="billAddress" id="billAddressSame" checked>
-                        <mark class="radio__mark"></mark>
-                        <label class="radio__label">Same as shipping address</label>
-                    </div>
-
-                    <div class="radio">
-                        <input class="radio__field" type="radio" name="billAddress" id="billAddressDifferent">
-                        <mark class="radio__mark"></mark>
-                        <label class="radio__label">Use a different billing address</label>
-                    </div>
-
-                    <div class="form-group__inside" id="AddressDifferent">
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="First Name">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Last Name">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="address">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Apt/Suite">
-                        </div>
-
-                        <div class="input form-group__full-item">
-                            <input class="input__field" type="text" placeholder="City">
-                        </div>
-
-                        <div class="input form-group__full-item">
-                            <input class="input__field" type="text" placeholder="County">
-                        </div>
-
-
-                        <div class="select form-group__full-item">
-                            <select class="select__field" placeholder="County">
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Zipcode">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder=Phone>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-group__capt">Shipping method</label>
-                <div class="form-group__set">
-                    <div class="form-group__item">
-                        <i class="sli-delivery"></i>
-                        <span>Enter your shipping address to see shipping options</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-group__capt">
-                    Payment Information
-                    <span class="form-group__text">All transactions are secure and encrypted</span>
-                </label>
-                <div class="form-group__set">
-                    <div class="radio">
-                        <input class="radio__field" type="radio" id="billCreditCard" name="paymentMethod" checked>
-                        <mark class="radio__mark"></mark>
-                        <label class="radio__label"><i class="sli-cards"></i> Credit Card</label>
-                    </div>
-
-                    <div class="form-group__inside form-group__inside--card" id="methodCreditCard">
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Card Number">
-
-                            <button class="input__info" type="button" data-toggle="tooltip" data-placement="top"
-                                    title="Payments with us are safely processed">
-                                <i class="sli-locked"></i>
-                            </button>
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Personal name">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="MM/YY">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="CVC Code">
-
-                            <button class="input__info" type="button" data-toggle="tooltip" data-placement="top"
-                                    title="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front. ">
-                                <i class="sli-question"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="radio">
-                        <input class="radio__field" type="radio" id="billPayPal" name="paymentMethod">
-                        <mark class="radio__mark"></mark>
-                        <label class="radio__label"><i class="sli-paypal"></i> PayPal</label>
-                    </div>
-
-                    <div class="form-group__inside form-group__inside--card" id="methodPayPal">
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Card Number">
-
-                            <button class="input__info" type="button" data-toggle="tooltip" data-placement="top"
-                                    title="Payments with us are safely processed">
-                                <i class="sli-locked"></i>
-                            </button>
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="Personal name">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="MM/YY">
-                        </div>
-
-                        <div class="input">
-                            <input class="input__field" type="text" placeholder="CVC Code">
-
-                            <button class="input__info" type="button" data-toggle="tooltip" data-placement="top"
-                                    title="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front. ">
-                                <i class="sli-question"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="set-order__bottom">
-                <button class="button" type="submit">Complete your order</button>
-            </div>
-        </form>
-    </div>
+<section id="setOrder" class="set-order">
+  <!-- 
+  <iframe
+    src="https://north-american-nutra.myshopify.com/a/secure/checkout/LTR3FfRBlPhEAugH4aag?variant_id=14623785844809&quantity=1"
+    style="width: 100%"
+    id="iframe"
+    onload="iframeloaded(this)"
+  ></iframe>
+  <iframe 
+    src="//north-american-nutra.myshopify.com/a/secure/checkout/0cRNfUCs3qQJYf9wD6lV?variant_id=14623785877577&quantity=1"
+    onload="iframeLoaded(this)"
+  ></iframe>
+  <iframe src="//northamericannutra.com/a/secure/checkout/y6ABLmnSpJLSQk4UyEdS?variant_id=14621943627849&quantity=1"
+    onload="iframeLoaded(this)"
+  ></iframe> -->
+  <div class="iframe-wrapper" data-id="14623785844809">
+    <iframe
+      src="https://north-american-nutra.myshopify.com/a/secure/checkout/LTR3FfRBlPhEAugH4aag?variant_id=14623785844809&quantity=1"
+    ></iframe>
+  </div>
+  <div class="iframe-wrapper" data-id="14623785877577">
+    <iframe
+      src="//north-american-nutra.myshopify.com/a/secure/checkout/0cRNfUCs3qQJYf9wD6lV?variant_id=14623785877577&quantity=1"
+    ></iframe>
+  </div>
+  <div class="iframe-wrapper" data-id="14621943627849">
+    <iframe
+      src="//northamericannutra.com/a/secure/checkout/y6ABLmnSpJLSQk4UyEdS?variant_id=14621943627849&quantity=1"
+    ></iframe>
+  </div>
 </section>
 
     <section class="faq">
