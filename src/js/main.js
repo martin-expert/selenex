@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     $topLink.click(function () {
 
-        $topPanel.toggleClass(SHOW_TOP_DETAIL);
+        // $topPanel.toggleClass(SHOW_TOP_DETAIL);
     });
 
     // Scrips to checkout components
@@ -51,7 +51,7 @@ $(document).ready(function () {
         DEFAULT_PLAN = 2;
 
     let
-        $planCard = $('[data-product]'),
+        $planCard = $('.product-plan__card[data-product]'),
         currency = '$',
         productList = [
             {
@@ -128,6 +128,7 @@ $(document).ready(function () {
         let atr = $(this).attr('data-product');
 
         chooseProduct(atr);
+        chooseCheckout(atr);
     });
 
     chooseProduct(DEFAULT_PLAN);
@@ -174,6 +175,7 @@ $(document).ready(function () {
 /* Custom Script */
     
 $(document).ready(function() {
+  $('.iframe-wrapper[data-product="2"]').show();
   $('.product-plan__card .orderBtn').click(function(e) {
     e.preventDefault();
     var $productWrapper = $(this).closest('.product-plan__card');
@@ -184,12 +186,7 @@ $(document).ready(function() {
       var elemTop = $(dstLink).offset().top;
       var headerHeight = $('header.header').outerHeight(true);
 
-      /* Display Selected Checkout Page */
-        var $targetProduct = $(dstLink).find(`.iframe-wrapper[data-product="${productId}"]`);
-        if ($targetProduct.length > 0) {
-          $(dstLink).find(`.iframe-wrapper:not([data-product="${productId}"])`).hide();
-          $targetProduct.show();
-        }
+      chooseCheckout(productId);
       window.scroll({
         top: (elemTop - headerHeight),
         behavior: 'smooth'
@@ -198,5 +195,18 @@ $(document).ready(function() {
       //   scrollTop: (elemTop - headerHeight) 
       // }, 600);
     }
-  })
+  });
+
+  var headerHeight = $('header.header').outerHeight(true);
+  $('body').css('padding-top', headerHeight + 'px');
 });
+
+function chooseCheckout(productId) {
+  /* Display Selected Checkout Page */
+    var $targetProduct = $(`.iframe-wrapper[data-product="${productId}"]`);
+    if ($targetProduct.length > 0) {
+      $(`.iframe-wrapper:not([data-product="${productId}"])`).hide();
+      $targetProduct.show();
+    }
+}
+

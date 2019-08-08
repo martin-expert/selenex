@@ -222,3 +222,14 @@
     }
   }
 }
+
+.button-wrapper {
+  .product-card__pay-method {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    @media(max-width: 500px) {
+      margin-top: 10px;
+    }
+  }
+}

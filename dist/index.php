@@ -38,12 +38,12 @@
 
      <article class="header__main">
             <div class="header__left">
-                <i class="sli-cart"></i>
-                <span>Order Summary</span>
-                <i class="sli-right-down"></i>
+                <a href="#" class="header__logo">
+                    <img src="images/logo-alt.svg">
+                </a>
             </div>
 
-            <div class="header__total" data-total-price></div>
+            <div class="header__total">Questions? <br class="visible-xxxs-block"> 1-800-822-2807</div>
         </article>
 
         <article class="header__detail">
@@ -175,8 +175,10 @@
                 <div class="product-plan__price" data-old-price="$49.95" data-price-adit="">
                     $39.95!
                 </div>
-
-                <a class="button" href="#setOrder">ORDER NOW</a>
+                <div class="button-wrapper">
+                    <a class="button orderBtn" href="#setOrder">BUY NOW 💳</a>
+                    <img class="product-card__pay-method" src="images/payments.png">
+                </div>
             </div>
 
             <div class="product-plan__card" data-product="2">
@@ -196,7 +198,10 @@
                     $119.85!
                 </div>
 
-                <a class="button" href="#setOrder">ORDER NOW</a>
+                <div class="button-wrapper">
+                    <a class="button orderBtn" href="#setOrder">BUY NOW 💳</a>
+                    <img class="product-card__pay-method" src="images/payments.png">
+                </div>
             </div>
 
             <div class="product-plan__card" data-product="3">
@@ -216,25 +221,16 @@
                     $199.75!
                 </div>
 
-                <a class="button" href="#setOrder">ORDER NOW</a>
+                <div class="button-wrapper">
+                    <a class="button orderBtn" href="#setOrder">BUY NOW 💳</a>
+                    <img class="product-card__pay-method" src="images/payments.png">
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-    <section class="coupon">
-    <article class="coupon__content">
-        <div class="coupon__text">
-            Have a coupon code?
-        </div>
-
-        <div class="coupon__form">
-            <input type="text" placeholder="your code">
-
-            <a href="" class="coupon__btn">Apply Coupon</a>
-        </div>
-    </article>
-</section>
+    
 
     <!-- include('includes/components/_set-order.html') -->
     
@@ -254,19 +250,19 @@
   <iframe src="//northamericannutra.com/a/secure/checkout/y6ABLmnSpJLSQk4UyEdS?variant_id=14621943627849&quantity=1"
     onload="iframeLoaded(this)"
   ></iframe> -->
-  <div class="iframe-wrapper" data-id="14623785844809">
+  <div class="iframe-wrapper" data-product="1">
+    <iframe
+      src="//northamericannutra.com/a/secure/checkout/y6ABLmnSpJLSQk4UyEdS?variant_id=14621943627849&quantity=1"
+    ></iframe>
+  </div>
+  <div class="iframe-wrapper" data-product="2">
     <iframe
       src="https://north-american-nutra.myshopify.com/a/secure/checkout/LTR3FfRBlPhEAugH4aag?variant_id=14623785844809&quantity=1"
     ></iframe>
   </div>
-  <div class="iframe-wrapper" data-id="14623785877577">
+  <div class="iframe-wrapper" data-product="3">
     <iframe
       src="//north-american-nutra.myshopify.com/a/secure/checkout/0cRNfUCs3qQJYf9wD6lV?variant_id=14623785877577&quantity=1"
-    ></iframe>
-  </div>
-  <div class="iframe-wrapper" data-id="14621943627849">
-    <iframe
-      src="//northamericannutra.com/a/secure/checkout/y6ABLmnSpJLSQk4UyEdS?variant_id=14621943627849&quantity=1"
     ></iframe>
   </div>
 </section>
